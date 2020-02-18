@@ -1,35 +1,27 @@
-<h1 align="center">Magisk Module Template Extended (MMT-Ex)</h1>
+# Bootanimation Module template
+### 依然的爱
+基础模板使用了xda大佬Zackptg5的模板
+https://github.com/Zackptg5/MMT-Extended
 
-<div align="center">
-  <!-- Version -->
-    <img src="https://img.shields.io/badge/Version-v1.3-blue.svg?longCache=true&style=popout-square"
-      alt="Version" />
-  <!-- Last Updated -->
-    <img src="https://img.shields.io/badge/Updated-January 22, 2020-green.svg?longCache=true&style=flat-square"
-      alt="_time_stamp_" />
-</div>
+### 介绍
+本模板在原版的基础上修改，用于刷入开机动画
+本模板兼容Android10的> /system/product/media 
+也兼容10以下版本的> /system/media
 
-<div align="center">
-  <strong>MMT Extended is the spiritual successor of Unity and makes magisk module creation easy. More details in the 
-    <a href="https://github.com/Zackptg5/MMT-Extended/wiki">wiki</a>.
-</div>
+### 使用方法
+仅需要把开机动画重命名为> bootanimation.zip 放置在模板的根目录打包刷入即可
 
-<div align="center">
-  <h3>
-    <a href="https://github.com/Zackptg5/MMT-Extended">
-      Source Code
-    </a>
-    <span> | </span>
-    <a href="https://github.com/Zackptg5/MMT-Extended-Addons">
-      Addons Repository
-    </a>
-    <span> | </span>
-    <a href="https://forum.xda-developers.com/apps/magisk/magisk-module-template-extended-mmt-ex-t4029819">
-      XDA
-    </a>
-  </h3>
-</div>
+### 注意
+本模板可能不支持MIUI
 
-### Usage
-- [Follow the directions here (DO NOT FORK)](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-- Then follow instructions in [Wiki](https://github.com/Zackptg5/MMT-Extended/wiki)
+### 实现原理
+```
+var_sdk="`grep_prop ro.build.version.sdk`"
+if [ "`echo $var_sdk`" = "29" ]; then
+  mv $MODPATH/bootanimation.zip $MODPATH/system/product/media
+  set_perm $MODPATH/system/product/media/bootanimation.zip 0 0 0644
+  else
+  mv $MODPATH/bootanimation.zip $MODPATH/system/media
+  set_perm $MODPATH/system/media/bootanimation.zip 0 0 0644
+fi
+```
