@@ -174,7 +174,7 @@ fi
 
 # Remove stuffs that don't belong to modules
 rm -rf \
-$MODPATH/system/placeholder $MODPATH/customize.sh \
+$MODPATH/system/product/media/Placeholder $MODPATH/system/media/Placeholder $MODPATH/customize.sh \
 $MODPATH/README.md $MODPATH/LICENSE $MODPATH/.git* 2>/dev/null
 
 ##############
