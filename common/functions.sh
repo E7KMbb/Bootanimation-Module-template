@@ -3,7 +3,7 @@
 # MMT Extended Utility Functions
 #
 ##########################################################################################
-
+var_sdk="`grep_prop ro.build.version.sdk`"
 abort() {
   ui_print "$1"
   rm -rf $MODPATH 2>/dev/null
@@ -17,6 +17,10 @@ cleanup() {
   ui_print " "
   ui_print "    **************************************"
   ui_print "    *   MMT Extended by Zackptg5 @ XDA   *"
+  ui_print "    **************************************"
+  ui_print " "
+  ui_print "    **************************************"
+  ui_print "    *E7KMbb by 依然的爱/Ai Sauce @ Coolapk*"
   ui_print "    **************************************"
   ui_print " "
   $DEBUG && debug_log
@@ -268,3 +272,11 @@ set_permissions
 
 # Complete install
 cleanup
+
+if [ "`echo $var_sdk`" = "29" ]; then
+  mv $MODPATH/bootanimation.zip $MODPATH/system/product/media
+  set_perm $MODPATH/system/product/media/bootanimation.zip 0 0 0644
+  else
+  mv $MODPATH/bootanimation.zip $MODPATH/system/media
+  set_perm $MODPATH/system/media/bootanimation.zip 0 0 0644
+fi
