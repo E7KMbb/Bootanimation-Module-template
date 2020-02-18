@@ -17,7 +17,7 @@ https://github.com/Zackptg5/MMT-Extended
 ### 实现原理
 ```
 var_sdk="`grep_prop ro.build.version.sdk`"
-if [ "`echo $var_sdk`" = "29" ]; then
+if [ "`echo $var_sdk`" -ge "29" ]; then
   mv $MODPATH/bootanimation.zip $MODPATH/system/product/media
   set_perm $MODPATH/system/product/media/bootanimation.zip 0 0 0644
   else
