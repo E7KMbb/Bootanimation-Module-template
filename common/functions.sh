@@ -3,7 +3,7 @@
 # MMT Extended Utility Functions
 #
 ##########################################################################################
-
+var_sdk="`grep_prop ro.build.version.sdk`"
 abort() {
   ui_print "$1"
   rm -rf $MODPATH 2>/dev/null
