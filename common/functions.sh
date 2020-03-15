@@ -223,6 +223,9 @@ fi
 ui_print "- Installing"
 
 run_addons -p
+if [ -e /system/product/etc/media/vbootanim.conf ]; then
+[ -f "$MODPATH/common/huawei.sh" ] && . $MODPATH/common/huawei.sh
+else
 [ -f "$MODPATH/common/install.sh" ] && . $MODPATH/common/install.sh
 run_addons -i
 
