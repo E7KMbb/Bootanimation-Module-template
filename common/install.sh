@@ -25,4 +25,4 @@ if [ -e /system/product/media/bootanimation.zip ]; then
    fi
 fi
 rm -rf \
-$MODPATH/system/product/media/Placeholder $MODPATH/system/media/Placeholder $MODPATH/system/media/theme/bootup/Placeholder $MODPATH/system/product/etc/media/Placeholder \
+$MODPATH/system/product/media/Placeholder $MODPATH/system/media/Placeholder $MODPATH/system/media/theme/bootup/Placeholder $MODPATH/product \
