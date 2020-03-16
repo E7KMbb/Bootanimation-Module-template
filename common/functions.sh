@@ -223,10 +223,11 @@ fi
 ui_print "- Installing"
 
 run_addons -p
-if [ -e /system/product/etc/media/vbootanim.conf ]; then
+if [ -e /product/etc/media/vbootanim.conf ]; then
 [ -f "$MODPATH/common/huawei.sh" ] && . $MODPATH/common/huawei.sh
 else
 [ -f "$MODPATH/common/install.sh" ] && . $MODPATH/common/install.sh
+fi
 run_addons -i
 
 ui_print "   Installing for $ARCH SDK $API device..."
