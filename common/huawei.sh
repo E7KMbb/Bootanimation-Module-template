@@ -1,5 +1,5 @@
-if [ -e $MODPATH/bootanimation.mp4 ]; then
-mv $MODPATH/bootanimation.mp4 $MODPATH/product/etc/media
+if [ -e $MODPATH/bootanim.mp4 ]; then
+mv $MODPATH/bootanim.mp4 $MODPATH/product/etc/media
 set_perm $MODPATH/product/etc/media/bootanimation.mp4 0 0 0644 u:object_r:system_file:s0
 else
 cp /product/etc/media/vbootanim.conf $MODPATH/system/product/etc/media
