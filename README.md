@@ -45,8 +45,14 @@ if [ -e /system/product/media/bootanimation.zip ]; then
             mv $MODPATH/bootanimation.qmg $MODPATH/system/media
             set_perm $MODPATH/system/media/bootanimation.qmg 0 0 0644 u:object_r:system_file:s0
             else
-            ui_print "不支持你的设备！"
-            exit 1
+             if [ -e /system/media/bootanimation/bootanimation.zip ]; then
+             #OPPO开机动画目录
+             mv $MODPATH/bootanimation.qmg $MODPATH/system/media
+             set_perm $MODPATH/system/media/bootanimation.qmg 0 0 0644 u:object_r:system_file:s0
+             else
+             ui_print "不支持你的设备！"
+             exit 1
+           fi
         fi
       fi
    fi
@@ -55,8 +61,8 @@ fi
 
 huawei.sh
 ```
-if [ -e $MODPATH/bootanimation.mp4 ]; then
-mv $MODPATH/bootanimation.mp4 $MODPATH/product/etc/media
+if [ -e $MODPATH/bootanim.mp4 ]; then
+mv $MODPATH/bootanim.mp4 $MODPATH/product/etc/media
 set_perm $MODPATH/product/etc/media/bootanimation.mp4 0 0 0644 u:object_r:system_file:s0
 else
 cp /product/etc/media/vbootanim.conf $MODPATH/system/product/etc/media
