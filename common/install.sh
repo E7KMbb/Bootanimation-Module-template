@@ -20,8 +20,8 @@ if [ -e /system/product/media/bootanimation.zip ]; then
             else
              if [ -e /system/media/bootanimation/bootanimation.zip ]; then
              #OPPO开机动画目录
-             mv $MODPATH/bootanimation.qmg $MODPATH/system/media
-             set_perm $MODPATH/system/media/bootanimation.qmg 0 0 0644 u:object_r:system_file:s0
+             mv $MODPATH/bootanimation.zip $MODPATH/system/media/bootanimation
+             set_perm $MODPATH/system/media/bootanimation/bootanimation.zip 0 0 0644 u:object_r:system_file:s0
              else
              ui_print "不支持你的设备！"
              exit 1
@@ -31,4 +31,4 @@ if [ -e /system/product/media/bootanimation.zip ]; then
    fi
 fi
 rm -rf \
-$MODPATH/system/product/media/Placeholder $MODPATH/system/media/Placeholder $MODPATH/system/media/theme/bootup/Placeholder $MODPATH/product \
+$MODPATH/system/product/media/Placeholder $MODPATH/system/media/Placeholder $MODPATH/system/media/theme/bootup/Placeholder $MODPATH/system/media/bootanimation/Placeholder $MODPATH/product \
