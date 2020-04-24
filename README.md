@@ -17,6 +17,7 @@ https://github.com/Zackptg5/MMT-Extended
 本模板可能不支持MIUI
 Magisk模块工作原理不支持一些特殊机型的目录
 > 索尼 /ome/media/bootanimation.zip
+
 > coloros /oppo_product/media/bootanimation/bootanimation.zip
 
 ### 警告
