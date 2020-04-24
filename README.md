@@ -29,7 +29,7 @@ install.sh
 ```
 find /system -name bootanimation.* > $MODPATH/directory.txt
 sed -i 's/\/bootanimation.*//' $MODPATH/directory.txt
-directory=$(cat $MODPATH/directory.txt)
+directory=$(sed -n '1p' $MODPATH/directory.txt)
 if [ -s $MODPATH/directory.txt ]; then
 mkdir -p $MODPATH$directory
 mv $MODPATH/bootanimation.* $MODPATH$directory
