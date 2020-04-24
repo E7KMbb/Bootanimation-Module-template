@@ -16,6 +16,7 @@ https://github.com/Zackptg5/MMT-Extended
 本模板不是转换器，你的设备支持哪个种格式它就支持哪种格式
 本模板可能不支持MIUI
 Magisk模块工作原理不支持一些特殊机型的目录
+暂不支持LG(因为我还没搞懂LG开机动画的工作原理)
 > 索尼 /ome/media/bootanimation.zip
 
 > coloros /oppo_product/media/bootanimation/bootanimation.zip
