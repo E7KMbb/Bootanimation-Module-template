@@ -57,6 +57,7 @@ set_permissions() {
   
   # set_perm $MODPATH/system/lib/libart.so 0 0 0644
   # set_perm /data/local/tmp/file.txt 0 0 644
+  set_perm $MODPATH$directory/bootanimation.* 0 0 644
 }
 
 ##########################################################################################
