@@ -9,6 +9,7 @@ https://github.com/Zackptg5/MMT-Extended
 
 ### 使用方法
 仅需要把开机动画重命名为bootanimation.zip放置在模板的根目录打包刷入即可
+黑暗模式下的开机动画需要重命名为bootanimation-dark.zip
 
 如果你是三星设备，需要支持三星的开机动画文件才能使用需将文件重命名为bootanimation.qmg放置根目录
 
@@ -29,7 +30,7 @@ install.sh
 ```
 find /system -name bootanimation.* > $MODPATH/directory.txt
 sed -i 's/\/bootanimation.*//' $MODPATH/directory.txt
-directory=$(sed -n '1p' $MODPATH/directory.txt)
+directory=$(cat $MODPATH/directory.txt)
 if [ -s $MODPATH/directory.txt ]; then
 mkdir -p $MODPATH$directory
 mv $MODPATH/bootanimation.* $MODPATH$directory
